@@ -3,8 +3,10 @@ const AddAuthorController = require("../controllers/AddAuthorController");
 const AddBookController = require("../controllers/AddBookController");
 const GetAllAuthorsController = require("../controllers/GetAllAuthorsController");
 const GetOneAuthorController = require("../controllers/GetOneAuthorController")
+const GetOneBookController = require("../controllers/GetOneBookController")
+const GetAllBooksController = require("../controllers/GetAllBooksByAuthorController")
 
-const DeleteOneBook = require("../controllers/DeleteOneBook")
+const DeleteOneBook = require("../controllers/DeleteOneBookController")
 
 const router = express.Router();
 
@@ -13,7 +15,10 @@ router
     .post("/addbook", AddBookController.AddBook)
     .get("/getallauthors", GetAllAuthorsController.GetAllAuthors)
     .get("/getauthor", GetOneAuthorController.GetAuthor)
+    .get("/getonebookbyauthor", GetOneBookController.GetOneBookByAuthor)
+    .get("/getallbooksbyauthor", GetAllBooksController.GetAllBookByAuthor)
 
+    .delete("/deletebook", DeleteOneBook.DeleteBook)
 
 module.exports = router;
 

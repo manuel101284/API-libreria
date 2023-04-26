@@ -3,19 +3,9 @@ POST http://localhost:3000/api/addauthor HTTP/1.1
 Content-Type: application/json
 
 {
-    "nameAuthor": "Haruki Murakami",
-    "countryAuthor": "Japon",
-    "yearBornAuthor": 1949
-}
-
-###
-POST http://localhost:3000/api/addauthor HTTP/1.1
-Content-Type: application/json
-
-{
-    "nameAuthor": "Sara Mesa",
-    "countryAuthor": "España",
-    "yearBornAuthor": 1976
+    "nameAuthor": "Virginia Woolf",
+    "countryAuthor": "Inglatera",
+    "yearBornAuthor": 1882
 }
 
 ###
@@ -23,6 +13,28 @@ GET http://localhost:3000/api/getallauthors HTTP/1.1
 
 ###
 GET http://localhost:3000/api/getauthor HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameAuthor": "Sara Mesa"
+}
+
+###
+GET http://localhost:3000/api/getonebookbyauthor HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameAuthor": "Sara Mesa",
+    "titleBook": "Cicatriz"
+}
+
+###
+GET http://localhost:3000/api/getallbooksbyauthor HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
 
 
 ###
@@ -30,9 +42,9 @@ POST http://localhost:3000/api/addbook HTTP/1.1
 Content-Type: application/json
 
 {
-    "nameAuthor": "Ernest Hemingway",
-    "titleBook": "Adios a las armas",
-    "yearBook": 1929,
-    "pagesBook": 376
+    "nameAuthor": "Sara Mesa",
+    "titleBook": "Un Amor",
+    "yearBook": 2020,
+    "pagesBook": 192
 }
 
