@@ -2,7 +2,7 @@ const Author = require("../models/AuthorModel")
 const Book = require("../models/BookModel")
 
 // Get All books from an indicated author
-const GetOneBookByAuthor = async (req, res) => {
+const GetAllBookByAuthor = async (req, res) => {
     const {
         nameAuthor
     } = req.body
@@ -24,5 +24,5 @@ const GetOneBookByAuthor = async (req, res) => {
 };
 
 module.exports = {
-    GetOneBookByAuthor
+    GetAllBookByAuthor
 }

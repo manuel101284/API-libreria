@@ -1,13 +1,15 @@
 const Author = require("../models/AuthorModel");
 
 const GetAuthor = async (req, res) => {
-    const nameAuthor = "Haruki Murakami"
+    const {
+        nameAuthor
+    } = req.body
 
-    try{
-        const getAuthor = await Author.find({ nameAuthor: nameAuthor}).exec();
+    try {
+        const getAuthor = await Author.find({ nameAuthor: nameAuthor }).exec();
         res.send(getAuthor);
     }
-    catch(err){
+    catch (err) {
         res.send({ message: "Autor no encontrado" })
     }
 
