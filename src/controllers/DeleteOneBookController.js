@@ -5,16 +5,23 @@ const DeleteBook = async (req, res) => {
         titleBook
     } = req.body
 
-    let bookID = await Book.findOne({ titleBook: titleBook })
+    let bookID = await Book.findOne({ titleBook: titleBook }, { _id: 1 })
 
-    const deletedBook = await Book.findByIdAndDelete({ _id: bookID })
-
-    if (deletedBook) {
-        res.send("Libro Eliminado con éxito")
+    if (!bookID) {
+        res.send("No existe un libro con ese título en nuestra base de datos")
     }
     else {
-        res.send("Dicho libro no existe en la base de datos")
+        const deletedBook = await Book.deleteOne({ _id: bookID })
+
+        if (deletedBook) {
+            res.send("Libro Eliminado con éxito")
+        }
+        else {
+            res.send("Error: No se ha podido eliminar dicho libro")
+        }
     }
+
+
 }
 
 module.exports = {

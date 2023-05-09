@@ -42,9 +42,44 @@ POST http://localhost:3000/api/addbook HTTP/1.1
 Content-Type: application/json
 
 {
-    "nameAuthor": "Sara Mesa",
-    "titleBook": "Un Amor",
-    "yearBook": 2020,
-    "pagesBook": 192
+    "nameAuthor": "Paul Benjamin Auster",
+    "titleBook": "Mr. Vértigo",
+    "yearBook": 1994,
+    "pagesBook": 216
 }
 
+###
+DELETE  http://localhost:3000/api/deletebook HTTP/1.1
+Content-Type: application/json
+
+{
+    "titleBook": "Mr. Vértigo"
+}
+
+###
+DELETE  http://localhost:3000/api/deleteauthor HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameAuthor": "Miguel de Cervantes Saavedra"
+}
+
+###
+PATCH http://localhost:3000/api/updatebook HTTP/1.1
+Content-Type: application/json
+
+{
+    "titleBook": "El cuaderno rojo",
+    "yearBook": 1993,
+    "pagesBook": 46
+}
+
+###
+PATCH http://localhost:3000/api/updateauthor HTTP/1.1
+Content-Type: application/json
+
+{
+    "nameAuthor": "Henry Miller",
+    "countryAuthor": "Estados Unidos",
+    "yearBornAuthor": 1899
+}

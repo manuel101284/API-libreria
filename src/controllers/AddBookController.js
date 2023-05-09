@@ -17,7 +17,7 @@ const AddBook = async (req, res) => {
         res.send("Autor no encontrado")
     }
     else {
-        const BookExisted = await Book.find({ titleBook: titleBook })
+        const BookExisted = await Book.findOne({ titleBook: titleBook })
 
         if (BookExisted) {
             console.log("Este libro ya está registrado")
