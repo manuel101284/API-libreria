@@ -9,13 +9,13 @@ const GetOneBookByAuthor = async (req, res) => {
     } = req.body
 
     try {
-        const bookByAuthor = await Author.find({ nameAuthor: nameAuthor })
+        const bookByAuthor = await Author.findOne({ nameAuthor: nameAuthor })
         if (!bookByAuthor) {
             res.send({ message: "Autor no encontrado" })
         }
         else {
             const authorId = bookByAuthor._id
-            const bookByTitle = await Book.find({ titleBook: titleBook })
+            const bookByTitle = await Book.findOne({ titleBook: titleBook })
 
             if (!bookByTitle) {
                 res.send({ message: "Libro no encontrado" })

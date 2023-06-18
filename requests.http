@@ -12,7 +12,7 @@ Content-Type: application/json
 GET http://localhost:3000/api/getallauthors HTTP/1.1
 
 ###
-GET http://localhost:3000/api/getauthor HTTP/1.1
+GET http://localhost:3000/api/getauthor/nameauthor HTTP/1.1
 Content-Type: application/json
 
 {
@@ -20,12 +20,16 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:3000/api/getauthor/:nameauthor=${Sara Mesa} HTTP/1.1
+Content-Type: text/plain
+
+###
 GET http://localhost:3000/api/getonebookbyauthor HTTP/1.1
 Content-Type: application/json
 
 {
     "nameAuthor": "Sara Mesa",
-    "titleBook": "Cicatriz"
+    "titleBook": "Un Amor"
 }
 
 ###
@@ -33,7 +37,7 @@ GET http://localhost:3000/api/getallbooksbyauthor HTTP/1.1
 Content-Type: application/json
 
 {
-
+    "nameAuthor": "Ernest Hemingway"
 }
 
 
