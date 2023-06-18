@@ -5,12 +5,25 @@ const GetAuthor = async (req, res) => {
         nameAuthor
     } = req.body
 
+    //const nameAuthor = req.body
+
     try {
-        const getAuthor = await Author.find({ nameAuthor: nameAuthor }).exec();
-        res.send(getAuthor);
+        let getOneAuthor = await Author.findOne({ nameAuthor: nameAuthor }, { _id: 1 });
+        console.log(getOneAuthor)
+
+        if (getOneAuthor) {
+            let oneAuthor = await Author.findOne({ _id: getOneAuthor })
+            res.json(oneAuthor);
+            console.log(oneAuthor);
+        }
+        if (!getOneAuthor) {
+            console.log(getOneAuthor)
+            res.send("Este autor no existe")
+        }
+
     }
     catch (err) {
-        res.send({ message: "Autor no encontrado" })
+        res.status(500).json({ message: err.message })
     }
 
 }

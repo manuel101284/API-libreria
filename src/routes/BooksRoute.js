@@ -21,9 +21,9 @@ router
     .post("/addbook", AddBookController.AddBook)
 
     .get("/getallauthors", GetAllAuthorsController.GetAllAuthors)
-    .get("/getauthor", GetOneAuthorController.GetAuthor)
+    .get("/getauthor/nameauthor", GetOneAuthorController.GetAuthor)
     .get("/getonebookbyauthor", GetOneBookController.GetOneBookByAuthor)
-    .get("/getallbooksbyauthor", GetAllBooksController.GetAllBookByAuthor)
+    .get("/getallbooksbyauthor", GetAllBooksController.GetAllBooksByAuthor)
 
     .delete("/deletebook", DeleteOneBook.DeleteBook)
     .delete("/deleteauthor", DeleteOneAuthor.DeleteAuthor)
